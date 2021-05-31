@@ -1,2 +1,2 @@
 # algorithms
-This repository will contain algorithms and their writing in JS
+This repository will contain algorithms and their writing in TypeScript
