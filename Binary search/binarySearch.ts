@@ -1,4 +1,4 @@
-const binarySearch = (n: number, arr: number[], start: number = 0, end: number = arr.length - 1): number => {
+export const binarySearch = (n: number, arr: number[], start: number = 0, end: number = arr.length - 1): number => {
     let indexMiddle = Math.floor((start + end) / 2)
     let middleNumber = arr[indexMiddle];
     if (start > end) {

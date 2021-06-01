@@ -1,0 +1,29 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "tests for algorithms",
+  "main": "",
+  "scripts": {
+    "test": "jest",
+    "ts": "ts-node "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DariaMalina/algorithms.git"
+  },
+  "author": "DariaMalina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DariaMalina/algorithms/issues"
+  },
+  "homepage": "https://github.com/DariaMalina/algorithms#readme",
+  "dependencies": {
+    "@types/jest": "^26.0.23",
+    "jest": "^27.0.3",
+    "ts-jest": "^27.0.2",
+    "ts-node": "^10.0.0",
+    "tsc": "^2.0.3",
+    "tsc-watch": "^4.4.0",
+    "typescript": "^4.3.2"
+  }
+}
