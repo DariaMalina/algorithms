@@ -25,11 +25,17 @@ const callback = (line) => {
 }
 rl.on('line', callback)
 
-function triangle(a, b, c) {
+let Answer;
+(function (Answer) {
+    Answer["YES"] = "YES";
+    Answer["NO"] = "NO";
+})(Answer || (Answer = {}));
+
+export function triangle(a, b, c) {
     if (a > 0 && b > 0 && c > 0) {
-            if (a + b > c&& b + c > a&& a + c > b){
-                return 'YES'
-            }
+        if (a + b > c && b + c > a && a + c > b) {
+            return Answer.YES;
+        }
     }
-    return 'NO';
+    return Answer.NO;
 }
