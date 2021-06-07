@@ -4,7 +4,6 @@ enum Mode {
     Auto = 'auto',
     Fan = 'fan'
 }
-
 export function getDesiredTemp(tRoom: number, tDesired: number, config: string): number {
     switch (config) {
         case Mode.Heat: {

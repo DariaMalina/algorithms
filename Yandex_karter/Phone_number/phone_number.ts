@@ -1,11 +1,10 @@
+enum Answer {
+    YES = 'YES',
+    NO = 'NO'
+}
 export function phoneNumber(numberMain: string, numberCompare: string): string {
     let nM = numberMain.replace(/[^0-9]/g, '');
     let n1 = numberCompare.replace(/[^0-9]/g, '');
-
-    enum Answer {
-        YES = 'YES',
-        NO = 'NO'
-    }
 
     switch (nM.length | n1.length) {
         case 11 | 11:
