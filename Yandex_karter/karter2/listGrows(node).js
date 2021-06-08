@@ -24,7 +24,7 @@ var Answer;
 function listGrows(list) {
     if (list.length >= 1) {
         var ans = list.every(function (el, i, list) {
-            return i === 0 || el >= list[i - 1];
+            return i === 0 || el > list[i - 1];
         });
         if (ans === true) {
             return Answer.YES;
