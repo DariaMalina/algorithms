@@ -8,7 +8,7 @@ export function listGrows(list: number[]): string {
         let ans = list.every(function (el, i, list) {
             return i === 0 || el > list[i - 1];
         })
-        if (ans === true) {
+        if (ans) {
             return Answer.YES
         }
         return Answer.NO

@@ -20,22 +20,21 @@ export function sequenceView(mass: number[]): string {
         return i === 0 || el < list[i - 1];
     })
     let wdes = mass.every(function (el, i, list) {
-        return i === list.length-1 || el <= list[i + 1];
+        return i === 0 || el <= list[i - 1];
     })
-    if (asc === true) {
-        return Answer.ASCENDING
-    }
-    if (ascw === true) {
-        return Answer.WEAKLYASCENDING
-    }
-    if (cnst === true) {
+    if (cnst) {
         return Answer.CONSTANT
     }
-
-    if (des === true) {
+    if (asc) {
+        return Answer.ASCENDING
+    }
+    if (ascw) {
+        return Answer.WEAKLYASCENDING
+    }
+    if (des) {
         return Answer.DESCENDING
     }
-    if (wdes === true) {
+    if (wdes) {
         return Answer.WEAKLYDESCENDING
     }
     return Answer.RANDOM
