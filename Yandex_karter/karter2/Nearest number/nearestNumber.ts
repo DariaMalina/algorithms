@@ -1,10 +1,11 @@
-export function nearestNumber(mass:number[], x:number):any {
-    if (mass.includes(x)){
-        return x
-    } else {
-        for (let i = x-1; i < x; i--) {
-            if (mass.includes(i)) {
-                return i
-            }
-        }}
+export function nearestNumber(mass: number[], x: number): any {
+    let minDiff=Math.abs(x - mass[0]);
+    let requiredNum=0
+    for (let i = 0; i < mass.length; i++) {
+        if (minDiff>Math.abs(x-mass[i])){
+            minDiff=Math.abs(x-mass[i])
+            requiredNum= mass[i]
+        }
+    }
+    return requiredNum
 }
