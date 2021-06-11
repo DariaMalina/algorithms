@@ -1,16 +1,27 @@
-export function greatestWork2(mass:number[]):string {
-    let one=0;
-    let two=0;
-    let done=mass.sort(function(a, b) {
-        return b - a;
-    });
-    if ((done[0]*done[1])<(done[done.length-1]*done[done.length-2])){
-        one=done[done.length-1];
-        two=done[done.length-2]
-    } else {
-        one=done[0];
-        two=done[1];
-    }
+export function greatestWork2(mass: number[]): any {
+    let one = 0;
+    let two = 0;
+    let minusOne = 0;
+    let minusTwo = 0;
+    for (let i = 0; i < mass.length; i++) {
+        if (one < mass[i] && mass[i] > 0) {
+            one= mass[i];
 
-    return `${one} ${two}`
+        } else if (mass[i] > two && mass[i] > 0) {
+
+            two = mass[i];
+        }two=one
+        if (minusOne > mass[i] && mass[i] < 0 && mass[i] < 0) {
+            minusOne = minusTwo;
+            minusTwo = mass[i];
+        } else if (minusTwo > mass[i]) {
+            if (minusOne < minusTwo) {
+                minusTwo = mass[i]
+            }
+        }
+    }
+    if ((one * two) > (minusOne * minusTwo)) {
+        return `${one} ${two}`
+    }
+    return `${minusTwo} ${minusOne}`
 }

@@ -6,23 +6,38 @@ const rl = readline.createInterface({
 let mass;
 const callback = (line) => {
     mass = line.split(' ')
-    console.log(greatestWork2Node(mass.map(Number)))
+    console.log(greatestWork2(mass.map(Number)))
     process.exit()
 };
 rl.on('line', callback)
 
-function greatestWork2Node(mass) {
-    let one = 0;
-    let two = 0;
-    let done = mass.sort(function (a, b) {
-        return b - a;
-    });
-    if ((done[0] * done[1]) > (done[done.length - 1] * done[done.length - 2])) {
-        one = done[0];
-        two = done[1];
-    } else {
-        one = done[done.length - 1];
-        two = done[done.length - 2]
+function greatestWork2(mass) {
+    var one = 0;
+    var two = 0;
+    var minusOne = 0;
+    var minusTwo = 0;
+    for (var i = 0; i < mass.length; i++) {
+        if (one < mass[i] && mass[i] > 0) {
+            one = two;
+            two = mass[i];
+        }
+        else if (mass[i] > two && mass[i] > 0) {
+            if (one > two)
+                two = mass[i];
+        }
+        if (minusOne > mass[i] && mass[i] < 0 && mass[i] < 0) {
+            minusOne = minusTwo;
+            minusTwo = mass[i];
+        }
+        else if (minusTwo > mass[i]) {
+            if (minusOne < minusTwo) {
+                minusTwo = mass[i];
+            }
+        }
     }
-    return one + " " + two;
+    if ((one * two) > (minusOne * minusTwo)) {
+        return one + " " + two;
+    }
+    return minusTwo + " " + minusOne;
 }
+
