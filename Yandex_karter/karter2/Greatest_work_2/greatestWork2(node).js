@@ -11,33 +11,37 @@ const callback = (line) => {
 };
 rl.on('line', callback)
 
-function greatestWork2(mass) {
+function greatestWork2(arr) {
     var one = 0;
     var two = 0;
     var minusOne = 0;
     var minusTwo = 0;
-    for (var i = 0; i < mass.length; i++) {
-        if (one < mass[i] && mass[i] > 0) {
-            one = two;
-            two = mass[i];
+    for (var i = 0; i < arr.length; i++) {
+        if (one < arr[i] && arr[i] > 0) {
+            two = one;
+            one = arr[i];
         }
-        else if (mass[i] > two && mass[i] > 0) {
-            if (one > two)
-                two = mass[i];
+        else if (arr[i] > two && arr[i] > 0) {
+            two = arr[i];
         }
-        if (minusOne > mass[i] && mass[i] < 0 && mass[i] < 0) {
-            minusOne = minusTwo;
-            minusTwo = mass[i];
+        if (minusOne > arr[i] && arr[i] < 0) {
+            minusTwo = minusOne;
+            minusOne = arr[i];
         }
-        else if (minusTwo > mass[i]) {
-            if (minusOne < minusTwo) {
-                minusTwo = mass[i];
-            }
+        else if (minusTwo > arr[i] && arr[i] < 0) {
+            minusTwo = arr[i];
         }
     }
     if ((one * two) > (minusOne * minusTwo)) {
-        return one + " " + two;
+        return two + " " + one;
     }
-    return minusTwo + " " + minusOne;
+    else if ((one * two) < (minusOne * minusTwo)) {
+        return minusOne + " " + minusTwo;
+    }
+    else if (arr.length===2){
+        if (arr[0]>arr[1]){
+            return arr[1]+ " " + arr[0];
+        }
+        return arr[0]+ " " + arr[1];
+    }
 }
-
