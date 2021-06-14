@@ -13,4 +13,7 @@ describe('intersection of many', () => {
     test('intersectionOfMany4',()=>{
         expect(intersectionOfMany([1, 2, 6 ,4, 5, 7  ],[10, 9 ,3, 11, 8])).toBe('')
     })
+    test('intersectionOfMany5',()=>{
+        expect(intersectionOfMany([1, 2, 2 ,4, 5, 7  ],[10, 2,2,9 ,3, 11, 8])).toBe('2,2')
+    })
 })
