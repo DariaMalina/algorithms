@@ -6,7 +6,7 @@ describe('tetstssssssssss',()=>{
     })
     test('number2',()=>{
         const string='oh you touch my tralala mmm my ding ding dong'
-        expect(most_frequent_word(string)).toBe('ding\n')
+        expect(most_frequent_word(string)).toBe('ding')
     })
 
     test('number3',()=>{
