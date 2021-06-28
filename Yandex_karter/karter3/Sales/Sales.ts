@@ -1,32 +1,32 @@
 
 type typeObject = Record<string, Record<string, number>>
-let objectsLastName: typeObject = {};
+let buyerList: typeObject = {};
 
-export function logger(obj: typeObject) {
+ function responseOutput(obj: typeObject) {
     for (let key in obj) {
         let object=obj[key]
-        for (let k in object){
-            return `${key}:(${k}:${object[k]})`
+        for (let propertyKey in object){
+            return `${key}:(${propertyKey}:${object[propertyKey]})`
         }
     }
 }
 export function sales(str: string): any {
-    let objectElements = str.split(' ');
-    let lastName = objectElements[0];
-    if (objectsLastName.hasOwnProperty(lastName)) {
-        if (objectsLastName[lastName].hasOwnProperty(objectElements[1])) {
-            for (let key in objectsLastName[lastName]){
-                key=[key]+objectElements[2]
+    let workItems = str.split(' ');
+    let surname = workItems[0];
+    if (buyerList.hasOwnProperty(surname)) {
+        if (buyerList[surname].hasOwnProperty(workItems[1])) {
+            for (let key in buyerList[surname]){
+                key=[key]+workItems[2]
             }
         }
-        objectsLastName[lastName] = {
-            [objectElements[1]]: Number([objectElements[1]])
+        buyerList[surname] = {
+            [workItems[1]]: Number([workItems[1]])
         }
     }
-    if (!objectsLastName.hasOwnProperty(lastName)) {
-        objectsLastName[lastName] = {
-            [objectElements[1]]: Number(objectElements[2])
+    if (!buyerList.hasOwnProperty(surname)) {
+        buyerList[surname] = {
+            [workItems[1]]: Number(workItems[2])
         }
     }
-    return logger(objectsLastName)
+    return responseOutput(buyerList)
 }
