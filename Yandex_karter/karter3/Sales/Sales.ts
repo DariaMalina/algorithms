@@ -3,10 +3,10 @@ type typeObject = Record<string, Record<string, number>>
 let buyerList: typeObject = {};
 
  function responseOutput(obj: typeObject) {
-    for (let key in obj) {
-        let object=obj[key]
+    for (let lastName in obj) {
+        let object=obj[lastName]
         for (let propertyKey in object){
-            return `${key}:(${propertyKey}:${object[propertyKey]})`
+            return `${lastName}:(${propertyKey}:${object[propertyKey]})`
         }
     }
 }
