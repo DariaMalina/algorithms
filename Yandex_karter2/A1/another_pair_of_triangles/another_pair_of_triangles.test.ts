@@ -1,0 +1,1 @@
+import {another_pair_of_triangles} from "./another_pair_of_triangles";
