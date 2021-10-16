@@ -21,9 +21,9 @@ const ANSWER = {
 }
 
 function triangles(arr) {
-    const x1=arr[0][1];
-    const x2=arr[2][3];
-    const x3=arr[4][5];
-    const x4=arr[6][7];
+    const x1 = arr[0][1];
+    const x2 = arr[2][3];
+    const x3 = arr[4][5];
+    const x4 = arr[6][7];
     return 'l'
 }
